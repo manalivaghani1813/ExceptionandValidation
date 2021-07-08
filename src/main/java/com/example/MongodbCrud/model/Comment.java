@@ -1,10 +1,19 @@
 package com.example.MongodbCrud.model;
 
+import com.example.MongodbCrud.validation.CustomValidation;
+import com.fasterxml.jackson.annotation.JsonFormat;
+
+import javax.validation.constraints.Min;
+import javax.validation.constraints.NotEmpty;
+
 public class Comment {
 
     private String id;
     private String photoId;
+    @Min(value = 5)
     private String message;
+    @NotEmpty
+    @CustomValidation
     private String createdBy;
     private String dateCreated;
 

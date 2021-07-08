@@ -18,9 +18,10 @@ public class UserService {
         return userRepository.findAll();
     }
 
-    public  Optional<User> getUserById(String id) {
-       return userRepository.findById(id);
+    public User getUserById(String id) {
+       return userRepository.findById(id).get();
     }
+
 
     public User saveUser(User user) {
         return userRepository.save(user);

@@ -1,13 +1,20 @@
 package com.example.MongodbCrud.model;
 
+import com.example.MongodbCrud.validation.CustomValidation;
 import org.springframework.data.annotation.Id;
+
+import javax.validation.constraints.Max;
+import javax.validation.constraints.NotEmpty;
 
 public class Album {
 
     @Id
     private String id;
+    @Max(value = 10)
     private String name;
     private String coverPhotoUrl;
+     @NotEmpty
+     @CustomValidation
     private String createdBy;
     private String dateCreated;
 

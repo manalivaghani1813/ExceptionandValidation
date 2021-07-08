@@ -1,6 +1,9 @@
 package com.example.MongodbCrud.model;
 
+import com.example.MongodbCrud.validation.CustomValidation;
 import org.springframework.data.annotation.Id;
+
+import javax.validation.constraints.NotEmpty;
 
 public class Photo {
 
@@ -8,6 +11,8 @@ public class Photo {
     private String id;
     private String albumId;
     private String photoUrl;
+    @NotEmpty
+    @CustomValidation
     private String createdBy;
     private String dateCreated;
 
